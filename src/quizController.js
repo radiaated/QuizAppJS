@@ -140,6 +140,7 @@ export const quizController = (() => {
       return {
         userAnswerHistory,
         totalScore,
+        questionCount: data.questionCount,
       };
     },
 

@@ -226,7 +226,9 @@ export const UIController = (() => {
       document.querySelector(DOMString.quizStage).innerHTML = `
       <div id="id__result">
         <div>
-          Score: <div id="id__score">${resultData.totalScore.toFixed(2)}</div>
+          Score: <div id="id__score"><span id="id__userscore">${resultData.totalScore.toFixed(
+            2
+          )}</span> / ${resultData.questionCount * 5}</div>
         </div>
         <div>
           <button id="id__btn__replay">Play again</button>

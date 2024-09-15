@@ -83,6 +83,7 @@ small {
   height: 100%;
   padding: 1.5em;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 #id__init_quiz__form {
@@ -208,6 +209,10 @@ input[type="submit"]:hover,
 }
 
 #id__score {
+  font-size: 2rem;
+}
+
+#id__userscore {
   font-size: 3rem;
   font-weight: 800;
 }
