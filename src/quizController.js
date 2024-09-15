@@ -32,7 +32,12 @@ export const quizController = (() => {
       } else {
         if (questionsCount < 3) {
           validationMessage.questionCount =
-            "Number of questions must be greater or equual to 3";
+            "Number of questions must be greater or equal to 3";
+          isValid = false;
+        }
+        if (questionsCount > 50) {
+          validationMessage.questionCount =
+            "Number of questions must be less or equal to 50";
           isValid = false;
         }
       }
@@ -49,9 +54,7 @@ export const quizController = (() => {
 
       while (questionSet.size < questionsCount) {
         questionSet.add(
-          quizData.questionsList[
-            Math.floor(Math.random(questionsCount) * questionsCount)
-          ]
+          quizData.questionsList[Math.floor(Math.random(questionsCount) * 50)]
         );
       }
 

@@ -226,14 +226,14 @@ export const UIController = (() => {
       document.querySelector(DOMString.quizStage).innerHTML = `
       <div id="id__result">
         <div>
-          Score: <div id="id__score">${resultData.totalScore}</div>
+          Score: <div id="id__score">${resultData.totalScore.toFixed(2)}</div>
         </div>
         <div>
           <button id="id__btn__replay">Play again</button>
         </div>
         <hr />
-        <div id="id__user_answer_history">
         <small>Submissions</small>
+        <div id="id__user_answer_history">
         ${resultData.userAnswerHistory
           .map((uah) => {
             return `<div class="user_answer_history_item">

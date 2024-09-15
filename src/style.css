@@ -221,7 +221,7 @@ input[type="submit"]:hover,
   flex-direction: column;
   align-items: center;
   gap: 0.5em;
-  width: 75%;
+  width: 90%;
   height: 30vh;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -280,6 +280,10 @@ footer a {
   font-weight: 800;
   color: var(--light);
   text-decoration: underline;
+}
+
+footer a:hover {
+  color: var(--secondary-color);
 }
 
 @keyframes fadein {

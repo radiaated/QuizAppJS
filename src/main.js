@@ -51,6 +51,8 @@ const controller = ((quizCtrl, UICtrl) => {
     document.querySelector(domstr.quizForm).onsubmit = (event) => {
       event.preventDefault();
 
+      UICtrl.dispayQuizSubmitError("");
+
       const submittedAnswer = Array.from(event.target.choice)
         .filter((choice) => choice.checked)
         .map((choice) => parseInt(choice.value));
