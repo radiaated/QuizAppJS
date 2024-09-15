@@ -230,6 +230,9 @@ input[type="submit"]:hover,
   height: 30vh;
   overflow-y: scroll;
   overflow-x: hidden;
+  border: 1px solid #e7e7e7;
+  padding: 0.5em;
+  border-radius: 5px;
 }
 .user_answer_history_item {
   display: flex;
@@ -241,6 +244,10 @@ input[type="submit"]:hover,
   padding-left: 1em;
   padding-right: 1em;
   border-bottom: 1px solid #cfcfcf;
+}
+
+.uah_question {
+  text-align: left;
 }
 
 .uah_answers_list {

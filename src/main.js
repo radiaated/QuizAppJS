@@ -35,7 +35,6 @@ const controller = ((quizCtrl, UICtrl) => {
 
     if (!validation.isValid) {
       UICtrl.displaySetupQuizError(validation.validationMessage);
-      console.log("a");
 
       return;
     }
@@ -82,8 +81,6 @@ const controller = ((quizCtrl, UICtrl) => {
   const loadQA = () => {
     const qa = quizCtrl.loadQAData();
 
-    console.log(qa);
-
     if (qa.status === "COMPLETED") {
       onQuizCompleted();
       return;
@@ -96,7 +93,6 @@ const controller = ((quizCtrl, UICtrl) => {
     const score = quizCtrl.onQuizCompleted();
     UICtrl.onQuizCompleted(score);
     const domstr = UICtrl.getDOMString();
-    console.log("completed");
 
     document.querySelector(domstr.btnReplay).addEventListener("click", () => {
       resetQuiz();

@@ -80,18 +80,15 @@ export const UIController = (() => {
     // Displays error message when username and question count is not valid
 
     displaySetupQuizError: (errorsMessage) => {
-      console.log(errorsMessage);
+      document.querySelector(DOMString.usernameError).innerHTML =
+        errorsMessage.hasOwnProperty("username")
+          ? `<span>${errorsMessage.username}</span>`
+          : "";
 
-      if (errorsMessage.hasOwnProperty("username")) {
-        document.querySelector(
-          DOMString.usernameError
-        ).innerHTML = `<span>${errorsMessage.username}</span>`;
-      }
-      if (errorsMessage.hasOwnProperty("questionCount")) {
-        document.querySelector(
-          DOMString.questionCountError
-        ).innerHTML = `<span>${errorsMessage.questionCount}</span>`;
-      }
+      document.querySelector(DOMString.questionCountError).innerHTML =
+        errorsMessage.hasOwnProperty("questionCount")
+          ? `<span>${errorsMessage.questionCount}</span>`
+          : "";
     },
 
     // Displays up the quiz UI
@@ -183,7 +180,6 @@ export const UIController = (() => {
           );
 
           for (let ci of choiceItems) {
-            console.log(ci);
             ci.addEventListener("click", (event) => {
               if (event.target.querySelector('[name="choice"]')) {
                 event.target.querySelector('[name="choice"]').checked =
@@ -200,8 +196,6 @@ export const UIController = (() => {
 
           for (let ci of choiceInputs) {
             ci.addEventListener("change", (event) => {
-              console.log("change");
-
               ci.parentElement.classList.toggle(
                 "checked-choice-item",
                 event.target.checked
@@ -221,8 +215,6 @@ export const UIController = (() => {
     // Handles the UI on the quiz completion
 
     onQuizCompleted: (resultData) => {
-      console.log(resultData);
-
       document.querySelector(DOMString.quizStage).innerHTML = `
       <div id="id__result">
         <div>
@@ -233,7 +225,6 @@ export const UIController = (() => {
         <div>
           <button id="id__btn__replay">Play again</button>
         </div>
-        <hr />
         <small>Submissions</small>
         <div id="id__user_answer_history">
         ${resultData.userAnswerHistory
